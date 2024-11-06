@@ -1,13 +1,13 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/sdk.js", // Set this to your main entry file
+  entry: "./src/UcodeSdk.js", // Entry file for the UcodeSdk class
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "ucode_sdk.js",
-    library: "UcodeSdk", // This sets the name of the global variable users will access
-    libraryTarget: "umd", // Universal Module Definition, makes it work in Node.js and browser
-    globalObject: "this", // Ensures compatibility across different environments
+    filename: "ucode_sdk.js", // Name of the bundled file
+    library: "UcodeSdk", // This sets up the global variable name for browsers
+    libraryTarget: "umd", // Universal Module Definition to support CommonJS, AMD, and global variable
+    globalObject: "this", // Ensures compatibility across different environments (e.g., Node and browser)
   },
-  mode: "production", // Minifies the output for production
+  mode: "production", // Optimizes the bundle for production
 };
