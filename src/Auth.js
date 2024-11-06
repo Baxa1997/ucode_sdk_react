@@ -4,7 +4,8 @@ export default class Auth {
   }
 
   async login(data, headers = {}) {
-    const url = `${this.config.baseURL}/v2/login`;
+    // const url = `${this.config.baseURL}/v2/login`;
+    const url = `${"https://api.client.u-code.io"}/v2/login`;
     if (!data.project_id) data.project_id = this.config.projectId;
     return this.request(url, "POST", data, headers);
   }

@@ -4,7 +4,7 @@ const config = {
   baseURL: "https://api.client.u-code.io",
 };
 
-const auth = new UcodeSdk(config);
+const auth = new UcodeSdk.Auth(config);
 
 const loginData = {
   username: "integrationtestgo",
@@ -18,7 +18,8 @@ const headers = {
   "Environment-Id": "e8b82a93-b87f-4103-abc4-b5a017f540a4",
 };
 
-auth.Auth.login(loginData, headers)
+auth
+  .login(loginData, headers)
   .then((response) => {
     if (response.status === "done") {
       console.log("Login successful:", response.data);
