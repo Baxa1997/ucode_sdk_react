@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module" src="src/index.js"></script>
+    <!-- <script>
+      const config = {
+        baseURL: "https://api.client.u-code.io",
+        projectId: "your-project-id",
+      };
+
+      // class Auth {
+      //   constructor(config) {
+      //     this.config = config;
+      //   }
+
+      //   async register(data, headers = {}) {
+      //     const url = `${this.config.baseURL}/v2/register?project-id=${this.config.projectId}`;
+      //     return this._execRequest(url, "POST", data, headers);
+      //   }
+
+      //   async resetPassword(data, headers = {}) {
+      //     const url = `${this.config.baseURL}/v2/reset-password`;
+      //     const defaultHeaders = {
+      //       authorization: "API-KEY",
+      //       "X-API-KEY": this.config.appId,
+      //     };
+      //     return this._execRequest(url, "PUT", data, {
+      //       ...defaultHeaders,
+      //       ...headers,
+      //     });
+      //   }
+
+      //   async login(data, headers = {}) {
+      //     const url = `${this.config.baseURL}/v2/login`;
+      //     if (!data.project_id) data.project_id = this.config.projectId;
+      //     return this._execRequest(url, "POST", data, headers);
+      //   }
+
+      //   async loginWithOption(data, headers = {}) {
+      //     const url = `${this.config.baseURL}/v2/login/with-option?project-id=${this.config.projectId}`;
+      //     return this._execRequest(url, "POST", data, headers);
+      //   }
+
+      //   async sendCode(data, headers = {}) {
+      //     const url = `${this.config.baseURL}/v2/send-code`;
+      //     return this._execRequest(url, "POST", data, headers);
+      //   }
+
+      //   async _execRequest(url, method, data, headers = {}) {
+      //     const defaultHeaders = {
+      //       "Content-Type": "application/json",
+      //       Authorization: `Bearer ${this.config.token || ""}`,
+      //     };
+
+      //     const response = await fetch(url, {
+      //       method,
+      //       headers: {...defaultHeaders, ...headers},
+      //       body: JSON.stringify(data),
+      //     });
+
+      //     if (!response.ok) {
+      //       const errorData = await response.json();
+      //       return {
+      //         status: "error",
+      //         data: {
+      //           description: errorData,
+      //           message: `Error ${method} ${url}`,
+      //           error: response.statusText,
+      //         },
+      //       };
+      //     }
+
+      //     return {
+      //       status: "done",
+      //       data: await response.json(),
+      //     };
+      //   }
+      // }
+
+      // const auth = new Auth(config);
+
+      // const loginData = {
+      //   username: "integrationtestgo",
+      //   password: "integrationtestgo",
+      //   project_id: "f05fdd8d-f949-4999-9593-5686ac272993",
+      //   client_type: "10debeef-b5b9-415d-bfe8-dbd8646e2fd4",
+      // };
+
+      // const headers = {
+      //   "Resource-Id": "b74a3b18-6531-45fc-8e05-0b9709af8faa",
+      //   "Environment-Id": "e8b82a93-b87f-4103-abc4-b5a017f540a4",
+      // };
+
+      // auth
+      //   .login(loginData, headers)
+      //   .then((response) => {
+      //     if (response.status === "done") {
+      //       console.log("Login successful:", response.data);
+      //     } else {
+      //       console.error("Login failed:", response.data);
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     console.error("Error during login:", error);
+      //   });
+    </script> -->
+  </body>
+</html>
