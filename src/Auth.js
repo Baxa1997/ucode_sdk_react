@@ -4,34 +4,34 @@ export default class Auth {
   }
 
   login(data, headers = {}) {
-    const url = `${this?.config?.baseURL}/v2/login?project-id=${this.config.project_id}`;
+    const url = `${this?.config?.authBaseUrl}/v2/login?project-id=${this.config.project_id}`;
     if (!data.project_id) data.project_id = this.config.project_id;
     return this.request(url, "POST", data, headers);
   }
 
   multiCompany(data, headers = {}) {
-    const url = `${this?.config?.baseURL}/v2/multi-company/one-login?project-id=${this.config.project_id}`;
+    const url = `${this?.config?.authBaseUrl}/v2/multi-company/one-login?project-id=${this.config.project_id}`;
     if (!data.project_id) data.project_id = this.config.project_id;
     return this.request(url, "POST", data, headers);
   }
 
   forgotPassword(data, headers = {}) {
-    const url = `${this?.config?.baseURL}/v2/forgot-password?project-id=${this.config.project_id}`;
+    const url = `${this?.config?.authBaseUrl}/v2/forgot-password?project-id=${this.config.project_id}`;
     return this.request(url, "POST", data, headers);
   }
 
   loginWithOption(data, headers = {}) {
-    const url = `${this?.config?.baseURL}/v2/login/with-option?project-id=${this.config.project_id}`;
+    const url = `${this?.config?.authBaseUrl}/v2/login/with-option?project-id=${this.config.project_id}`;
     return this.request(url, "POST", data, headers);
   }
 
   register(data, headers = {}) {
-    const url = `${this.config.baseURL}/v2/register?project-id=${this.config.projectId}`;
+    const url = `${this.config.authBaseUrl}/v2/register?project-id=${this.config.projectId}`;
     return this.request(url, "POST", data, headers);
   }
 
   resetPassword(data, headers = {}) {
-    const url = `${this.config.baseURL}/v2/reset-password`;
+    const url = `${this.config.authBaseUrl}/v2/reset-password`;
     const defaultHeaders = {
       authorization: "API-KEY",
       "X-API-KEY": this.config.appId,
@@ -43,7 +43,7 @@ export default class Auth {
   }
 
   sendCode(data, headers = {}) {
-    const url = `${this.config.baseURL}/v2/send-code`;
+    const url = `${this.config.authBaseUrl}/v2/send-code`;
     return this.request(url, "POST", data, headers);
   }
 
