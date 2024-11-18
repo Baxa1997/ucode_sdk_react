@@ -1,11 +1,11 @@
 import UcodeSdk from "./UcodeSdk.js";
 
-// const loginData = {
-//   username: "",
-//   password: "",
-//   project_id: "f05fdd8d-f949-4999-9593-5686ac272993",
-//   client_type: "10debeef-b5b9-415d-bfe8-dbd8646e2fd4",
-// };
+const loginData = {
+  username: "",
+  password: "",
+  project_id: "f05fdd8d-f949-4999-9593-5686ac272993",
+  client_type: "10debeef-b5b9-415d-bfe8-dbd8646e2fd4",
+};
 
 const config = {
   appId: "P-kL7M9h0NarpDfsSTzBPhDGOE4H9rUPl5",
