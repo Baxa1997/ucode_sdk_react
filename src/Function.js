@@ -1,26 +1,21 @@
-export default class Files {
+export default class Functions {
   constructor(config) {
     this.config = config;
   }
 
-  fileUpload(data, headers = {}) {
-    const url = `${this?.config?.baseURL}/v1/files/folder_upload`;
-    return this.request(url, "POST", data, headers);
-  }
+  InvokeFunction(data, params = null, headers = {}) {
+    const url = `${this?.config?.baseURL}/v1/invoke_function`;
 
-  imageUpload(data, headers = {}) {
-    const url = `${this?.config?.baseURL}/v1/files/folder_upload?folder_name=Media`;
-    return this.request(url, "POST", data, headers);
-  }
+    if (params && typeof params === "object") {
+      const queryParams = new URLSearchParams(params).toString();
+      return this.request(`${url}?${queryParams}`, "POST", data, headers);
+    }
 
-  videoUpload(data, headers = {}) {
-    const url = `${this?.config?.baseURL}/v1/files/folder_upload?project-id=${this.config.project_id}`;
-    return this.request(url, "POST", data, headers);
-  }
+    if (params && typeof params === "string") {
+      return this.request(url, "POST", {...data, params}, headers);
+    }
 
-  fileDelete(id, headers = {}) {
-    const url = `${this?.config?.baseURL}/v1/files/${id}`;
-    return this.request(url, "DELETE", data, headers);
+    return this.request(url, "POST", data, headers);
   }
 
   async request(url, method, data, headers = {}) {
@@ -36,11 +31,8 @@ export default class Files {
       headers: {...defaultHeaders, ...headers},
     };
 
-    const fileData = new FormData();
-    fileData.append("file", data);
-
     if (method !== "GET" && method !== "HEAD") {
-      options.body = fileData;
+      options.body = JSON.stringify(data);
     }
 
     const response = await fetch(url, options);

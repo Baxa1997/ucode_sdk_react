@@ -13,8 +13,13 @@ export default class Items {
     return this.request(url, "PUT", data, headers);
   }
 
-  delete(tableSlug, data, id, headers = {}) {
-    const url = `${this?.config?.baseURL}/v2/items/${tableSlug}/${id}`;
+  delete(tableSlug, data, id = "", headers = {}) {
+    let url;
+    if (data?.ids) {
+      url = `${this?.config?.baseURL}/v2/items/${tableSlug}/?project_id=${this?.config?.project_id}`;
+    } else {
+      url = `${this?.config?.baseURL}/v2/items/${tableSlug}/${id}`;
+    }
     return this.request(url, "DELETE", data, headers);
   }
 
